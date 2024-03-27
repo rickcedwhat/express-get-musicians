@@ -126,7 +126,7 @@ describe("GET ./bands/:id endpoint", () => {
   test("response should be json", () => {
     expect(response.type).toBe("application/json");
   });
-  test("response should be The Clash", () => {
-    expect(response.body.name).toBe("The Clash");
+  test("response should be The Beatles", () => {
+    expect(response.body.name).toBe("The Beatles");
   });
 });

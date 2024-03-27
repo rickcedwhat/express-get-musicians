@@ -99,3 +99,34 @@ describe("DELETE ./musicians/:id endpoint", () => {
     expect(response.body.name).toBe("Mick Jagger");
   });
 });
+
+describe("GET ./bands endpoint", () => {
+  // Write your tests here
+  let response;
+  beforeAll(async () => {
+    response = await request(app).get("/bands");
+  });
+  test("should return status 200", () => {
+    expect(response.statusCode).toBe(200);
+  });
+  test("response should be json", () => {
+    expect(response.type).toBe("application/json");
+  });
+});
+
+describe("GET ./bands/:id endpoint", () => {
+  // Write your tests here
+  let response;
+  beforeAll(async () => {
+    response = await request(app).get("/bands/1");
+  });
+  test("should return status 200", () => {
+    expect(response.statusCode).toBe(200);
+  });
+  test("response should be json", () => {
+    expect(response.type).toBe("application/json");
+  });
+  test("response should be The Clash", () => {
+    expect(response.body.name).toBe("The Clash");
+  });
+});

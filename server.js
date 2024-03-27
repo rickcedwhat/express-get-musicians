@@ -1,6 +1,7 @@
 const app = require("./src/app");
 const { db } = require("./db/connection");
 const musicianRouter = require("./routes/musicians");
+const bandRouter = require("./routes/bands");
 const port = 3000;
 
 app.listen(port, () => {
@@ -9,5 +10,6 @@ app.listen(port, () => {
 });
 
 app.use("/musicians", musicianRouter);
+app.use("/bands", bandRouter);
 
 module.exports = app;
